@@ -26,3 +26,4 @@ Makefile
 .cache
 .idea
 .vscode
+.ccls-cache
