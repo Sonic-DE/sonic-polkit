@@ -21,20 +21,12 @@ include(GNUInstallDirs)
 
 include(FeatureSummary)
 
-set(REQUIRED_QT_VERSION 5.5.0)
+set(REQUIRED_QT_VERSION 6.5.0)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-option(BUILD_WITH_QT6 "Build against Qt 6" OFF)
-
-if (NOT DEFINED QT_MAJOR_VERSION)
-    if (BUILD_WITH_QT6)
-        set(QT_MAJOR_VERSION 6)
-    else()
-        set(QT_MAJOR_VERSION 5)
-    endif()
-endif()
+set(QT_MAJOR_VERSION 6)
 
 find_package(Qt${QT_MAJOR_VERSION} ${REQUIRED_QT_VERSION} REQUIRED COMPONENTS Core DBus Widgets)
 
